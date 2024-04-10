@@ -6,13 +6,13 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-//Luke Hanrahan
+
 //IST411
-//Group Project
+
 @Entity
 @Table(name="employeedatatable")
 public class Employee {
-//names left as they are in the table
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="Employee_ID")
@@ -31,13 +31,13 @@ public class Employee {
 	private int startSalary;
 	
 	@Column(name="Employee_Contract_Signed")
-	private char contract;
+	private String contract;
 	
 	@Column(name="Social_Security_Number")
 	private String ssn;
 	
 	@Column(name="Birthdate")
-	private String birthdate;
+	private String birthDate;
 
 	@Column(name="Phone_Number")
 	private String phoneNumber;
@@ -51,7 +51,7 @@ public class Employee {
 	public Employee() {}
 
 
-	public Employee(int id, String firstName, String lastName, String startDate, int startSalary, char contract, String ssn, String birthdate, String phoneNumber, String emergencyContact, String emergencyContactPhone) {
+	public Employee(int id, String firstName, String lastName, String startDate, int startSalary, String contract, String ssn, String birthDate, String phoneNumber, String emergencyContact, String emergencyContactPhone) {
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -59,7 +59,7 @@ public class Employee {
 		this.startSalary = startSalary;
 		this.contract = contract;
 		this.ssn = ssn;
-		this.birthdate = birthdate;
+		this.birthDate = birthDate;
 		this.phoneNumber = phoneNumber;
 		this.emergencyContact = emergencyContact;
 		this.emergencyContactPhone = emergencyContactPhone;
@@ -105,11 +105,11 @@ public class Employee {
 		this.startSalary = startSalary;
 	}
 
-	public char getContract() {
+	public String getContract() {
 		return this.contract;
 	}
 
-	public void setContract(char contract) {
+	public void setContract(String contract) {
 		this.contract = contract;
 	}
 
@@ -121,12 +121,12 @@ public class Employee {
 		this.ssn = ssn;
 	}
 
-	public String getBirthdate() {
-		return this.birthdate;
+	public String getBirthDate() {
+		return this.birthDate;
 	}
 
-	public void setBirthdate(String birthdate) {
-		this.birthdate = birthdate;
+	public void setBirthDate(String birthDate) {
+		this.birthDate = birthDate;
 	}
 
 	public String getPhoneNumber() {
@@ -164,7 +164,7 @@ public class Employee {
 			", startSalary='" + getStartSalary() + "'" +
 			", contract='" + getContract() + "'" +
 			", ssn='" + getSsn() + "'" +
-			", birthdate='" + getBirthdate() + "'" +
+			", birthdate='" + getBirthDate() + "'" +
 			", phoneNumber='" + getPhoneNumber() + "'" +
 			", emergencyContact='" + getEmergencyContact() + "'" +
 			", emergencyContactPhone='" + getEmergencyContactPhone() + "'" +
@@ -174,3 +174,4 @@ public class Employee {
 }
 
 	
+
