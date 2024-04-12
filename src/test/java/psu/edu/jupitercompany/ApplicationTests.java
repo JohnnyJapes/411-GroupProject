@@ -1,4 +1,4 @@
-package psu.edu.groupProject;
+package psu.edu.jupitercompany;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
