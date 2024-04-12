@@ -1,4 +1,4 @@
-package psu.edu.groupProject;
+package psu.edu.jupitercompany;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

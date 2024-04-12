@@ -1,4 +1,4 @@
-package psu.edu.groupProject.entity;
+package psu.edu.jupitercompany.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
