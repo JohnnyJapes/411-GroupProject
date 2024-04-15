@@ -14,7 +14,7 @@ import psu.edu.jupitercompany.entity.Employee;
 import psu.edu.jupitercompany.service.EmployeeService;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/employees")
 public class EmployeeController {
     
 	private EmployeeService employeeService;
@@ -32,7 +32,7 @@ public class EmployeeController {
         
         // add to the spring model
         theModel.addAttribute("employees", theEmployees);
-        return "list-employees";
+        return "employees/list-employees";
     }
     
     @GetMapping("/showFormForAdd")
@@ -43,7 +43,7 @@ public class EmployeeController {
     	
     	theModel.addAttribute("employee", theEmployee);
     	
-    	return "employee-form";
+    	return "employees/employee-form";
     }
     
     @GetMapping("/showFormForUpdate")
@@ -57,7 +57,7 @@ public class EmployeeController {
     	
     	//send over to our form
     	
-    	return "employee-form";
+    	return "employees/employee-form";
     }
     
     @PostMapping("/save")
@@ -67,7 +67,7 @@ public class EmployeeController {
     	employeeService.save(theEmployee);
     	
     	// use a redirect to prevent duplicate submissions
-    	return "redirect:/list";
+    	return "redirect:/employees/list";
     }
     
     @GetMapping("/delete")
@@ -78,6 +78,6 @@ public class EmployeeController {
     	employeeService.deleteById(theId);
     	
     	//redirect to /employees/list
-    	return "redirect:/list";
+    	return "redirect:/employees/list";
     }
 }
