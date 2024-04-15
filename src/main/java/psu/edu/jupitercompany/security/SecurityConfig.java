@@ -4,6 +4,7 @@ import javax.sql.DataSource;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -39,10 +40,11 @@ public class SecurityConfig {
     	
     	http.authorizeHttpRequests(configurer ->
     	configurer
-    			  .requestMatchers("/list").hasRole("EMPLOYEE")
-    			  .requestMatchers("/showFormForAdd/**").hasRole("MANAGER")
-    			  .requestMatchers("/showFormForUpdate/**").hasRole("MANAGER")
-    			  .requestMatchers("/delete/**").hasRole("ADMIN")
+				.requestMatchers(HttpMethod.GET, "/images/*").permitAll()
+    			  .requestMatchers("/employees/list/**").hasRole("EMPLOYEE")
+    			  .requestMatchers("/employees//showFormForAdd/**").hasRole("MANAGER")
+    			  .requestMatchers("/employees//showFormForUpdate/**").hasRole("MANAGER")
+    			  .requestMatchers("/employees/delete/**").hasRole("ADMIN")
     			  .anyRequest().authenticated()
     			)
     			.formLogin(form ->
