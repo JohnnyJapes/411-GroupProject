@@ -42,8 +42,8 @@ public class SecurityConfig {
     	configurer
 				.requestMatchers(HttpMethod.GET, "/images/*").permitAll()
     			  .requestMatchers("/employees/list/**").hasRole("EMPLOYEE")
-    			  .requestMatchers("/employees//showFormForAdd/**").hasRole("MANAGER")
-    			  .requestMatchers("/employees//showFormForUpdate/**").hasRole("MANAGER")
+    			  .requestMatchers("/employees/showFormForAdd/**").hasRole("MANAGER")
+    			  .requestMatchers("/employees/showFormForUpdate/**").hasRole("MANAGER")
     			  .requestMatchers("/employees/delete/**").hasRole("ADMIN")
     			  .anyRequest().authenticated()
     			)
