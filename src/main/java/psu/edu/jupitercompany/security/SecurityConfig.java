@@ -44,6 +44,7 @@ public class SecurityConfig {
     			  .requestMatchers("/employees/list/**").hasRole("EMPLOYEE")
     			  .requestMatchers("/employees/showFormForAdd/**").hasRole("MANAGER")
     			  .requestMatchers("/employees/showFormForUpdate/**").hasRole("MANAGER")
+    			  .requestMatchers("/employees/save").hasRole("MANAGER")
     			  .requestMatchers("/employees/delete/**").hasRole("ADMIN")
     			  .anyRequest().authenticated()
     			)
@@ -54,9 +55,9 @@ public class SecurityConfig {
     						.permitAll()
     			)
     			.logout(logout -> logout.permitAll()
-    					/*)
+    					)
     			.exceptionHandling(configurer -> 
-    						configurer.accessDeniedPage("/access-denied")*/
+    						configurer.accessDeniedPage("/access-denied")
     					
     					);
     	
