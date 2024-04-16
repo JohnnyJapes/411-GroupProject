@@ -21,39 +21,39 @@
         <p class="h4 mb-4">Save Employee</p>
 
         <form action="#" th:action="@{/employees/save}"
-                         th:object="${employee}" method="POST">
+                         th:object="${employee}" method="POST" onsubmit="return validateForm()">
                          
             <input type="hidden" th:field="*{id}" />
 
             <input type="text" th:field="*{firstName}"
-                   class="form-control mb-4 w-25" placeholder="First name">
+                   class="form-control mb-4 w-25" placeholder="First name" pattern="[A-Za-z]+" title="Only letters allowed" required>
 
             <input type="text" th:field="*{lastName}"
-                   class="form-control mb-4 w-25" placeholder="Last name">
+                   class="form-control mb-4 w-25" placeholder="Last name" pattern="[A-Za-z]+" title="Only letters allowed" required>
 
-            <input type="text" th:field="*{startDate}"
-                   class="form-control mb-4 w-25" placeholder="Start date">
+            <input type="date" th:field="*{startDate}"
+                   class="form-control mb-4 w-25" placeholder="Start date" required>
                    
-            <input type="text" th:field="*{startSalary}"
-                   class="form-control mb-4 w-25" placeholder="Start salary">
+            <input type="number" th:field="*{startSalary}"
+                   class="form-control mb-4 w-25" placeholder="Start salary" min="0" step="0.01" required>
                    
             <input type="text" th:field="*{contract}"
-                   class="form-control mb-4 w-25" placeholder="Employee contract signed">
+                   class="form-control mb-4 w-25" placeholder="Employee contract signed" required>
                    
             <input type="text" th:field="*{ssn}"
-                   class="form-control mb-4 w-25" placeholder="Social security number">
+                   class="form-control mb-4 w-25" placeholder="Social security number" pattern="[0-9]{9}" title="9 digits only" required>
                    
-            <input type="text" th:field="*{birthDate}"
-                   class="form-control mb-4 w-25" placeholder="Birthdate">
+            <input type="date" th:field="*{birthDate}"
+                   class="form-control mb-4 w-25" placeholder="Birthdate" required>
                    
-            <input type="text" th:field="*{phoneNumber}"
-                   class="form-control mb-4 w-25" placeholder="Phone number">
+            <input type="tel" th:field="*{phoneNumber}"
+                   class="form-control mb-4 w-25" placeholder="Phone number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Format: XXX-XXX-XXXX" required>
                    
             <input type="text" th:field="*{emergencyContact}"
-                   class="form-control mb-4 w-25" placeholder="Emergency contact name">
+                   class="form-control mb-4 w-25" placeholder="Emergency contact name" pattern="[A-Za-z ]+" title="Only letters and spaces allowed" required>
                    
-            <input type="text" th:field="*{emergencyContactPhone}"
-                   class="form-control mb-4 w-25" placeholder="Emergency contact phone">
+            <input type="tel" th:field="*{emergencyContactPhone}"
+                   class="form-control mb-4 w-25" placeholder="Emergency contact phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Format: XXX-XXX-XXXX" required>
 
             <button type="submit" class="btn btn-info col-2">Save</button>
 
@@ -64,6 +64,12 @@
 
     </div>
 
+    <script>
+        function validateForm() {
+            // Add additional JavaScript validation if required
+            return true; // Return true if form is valid, false otherwise
+        }
+    </script>
 
 </body>
 </html>
