@@ -30,7 +30,7 @@
                 <th>Phone Number</th>
                 <th>Emergency Contact Name</th>
                 <th>Emergency Contact Phone</th>
-                <th>Action</th>
+                <th sec:authorize="hasAnyRole('MANAGER')">Action</th>
             </tr>
         </thead>
 
@@ -46,9 +46,9 @@
                 <td th:text="${tempEmployee.phoneNumber}"></td>
                 <td th:text="${tempEmployee.emergencyContact}"></td>
                 <td th:text="${tempEmployee.emergencyContactPhone}"></td>
-                <td>
+                <td sec:authorize="hasAnyRole('MANAGER')">
 					<a th:href="@{/employees/showFormForUpdate(employeeId=${tempEmployee.id})}"
-						class="btn btn-info btn-sm">
+						class="btn btn-info btn-sm"	sec:authorize="hasAnyRole('MANAGER')"> 
 						Update
 					</a>
 					
