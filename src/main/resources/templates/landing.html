@@ -8,15 +8,24 @@
 
 </head>
 <div th:replace="~{navbar :: navbar}"></div>
-<body>
+<body class="text-light" style="background-image: url('http://localhost:8080/images/jupiterBackground.jpg'); ">
 
-    <h2>Welcome to the Jupiter Company!</h2>
-	<h2>It is great to see you here!</h2>
-    <hr>
-   <p>Employees must login before accessing any of our internal tools</p>
-   </div>
-	<hr>
-	<a class="btn btn-primary ms-5" th:href="@{/employees}">Access Secure Site</a>
+    <div style="text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">
+        <h2 class="text-center text-light">Welcome to the Jupiter Company!</h2>
+        <h2 class="text-center text-light">It is great to see you here!</h2>
+        <hr>
+        <div class="cont"></div>
+        <p class="container text-center">Welcome to Jupiter Company, where innovation meets excellence. We pride ourselves on delivering cutting-edge solutions tailored to meet your needs. With a dedicated team of experts, we strive to exceed expectations in every project we undertake. Explore our range of services and discover how we can propel your business to new heights. Join us on a journey towards success with Jupiter Company.</p>
+    <p class="text-center">Employees must login before accessing any of our internal tools</p>
+    </div>
+        <hr>
+        <div class="row justify-content-center">
+            
+            <a class="btn btn-primary ms-5 col-2" th:href="@{/employees}">Access Secure Site</a>
+        </div>
+
+    </div>
+
 
 
 </body>
