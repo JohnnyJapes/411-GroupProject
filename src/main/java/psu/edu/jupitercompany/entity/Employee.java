@@ -28,7 +28,7 @@ public class Employee {
 	private String startDate;
 
 	@Column(name="Start_Salary")
-	private int startSalary;
+	private double startSalary;
 	
 	@Column(name="Employee_Contract_Signed")
 	private String contract;
@@ -51,7 +51,7 @@ public class Employee {
 	public Employee() {}
 
 
-	public Employee(int id, String firstName, String lastName, String startDate, int startSalary, String contract, String ssn, String birthDate, String phoneNumber, String emergencyContact, String emergencyContactPhone) {
+	public Employee(int id, String firstName, String lastName, String startDate, double startSalary, String contract, String ssn, String birthDate, String phoneNumber, String emergencyContact, String emergencyContactPhone) {
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -97,11 +97,11 @@ public class Employee {
 		this.startDate = startDate;
 	}
 
-	public int getStartSalary() {
+	public double getStartSalary() {
 		return this.startSalary;
 	}
 
-	public void setStartSalary(int startSalary) {
+	public void setStartSalary(double startSalary) {
 		this.startSalary = startSalary;
 	}
 

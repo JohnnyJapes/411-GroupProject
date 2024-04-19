@@ -40,7 +40,7 @@
                 <td th:text="${tempEmployee.firstName}"></td>
                 <td th:text="${tempEmployee.lastName}"></td>
                 <td th:text="${tempEmployee.startDate}"></td>
-                <td th:text="${tempEmployee.startSalary}"></td>
+                <td th:text="'$'+${#numbers.formatDecimal(tempEmployee.startSalary,1,2)}"></td>
                 <td th:text="${tempEmployee.contract}"></td>
                 <td th:text="${tempEmployee.ssn}"></td>
                 <td th:text="${tempEmployee.birthDate}"></td>
