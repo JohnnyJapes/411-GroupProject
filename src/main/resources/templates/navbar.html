@@ -9,8 +9,8 @@
 </head>
 
 		<nav class="navbar navbar-expand-sm"  th:fragment="navbar" style="background-color: rgb(192, 192, 192);">
-		    <a class="navbar-brand" href="#">
-		      <img src="/images/jupiterEdit.png" th:src="@{				/images/jupiterEdit.png}" alt="Logo" width="30" height="30" class="d-inline-block align-text-top"\>
+		    <a class="navbar-brand" href="#" th:href="@{/}">
+		      <img src="/images/jupiterEdit.png" th:src="@{	/images/jupiterEdit.png}" alt="Logo" width="30" height="30" class="d-inline-block align-text-top"\>
 		      Jupiter Company
 		    </a>
 	
@@ -19,10 +19,19 @@
 		  			<li class="nav-item">
 		  				<a class="nav-link active" th:href="@{/}">Home</a>
 		  			</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						  Employee Tools
+						</a>
+						<ul class="dropdown-menu">
+						  <li><a class="dropdown-item" th:href="@{/employees}" 	>Employee Management</a></li>
+						</ul>
+					</li>
 
 		  		</ul>
+				
 		  </div>
-		  <form action="#" th:action="@{/logout}" method="POST" class="d-flex">
+		  <form sec:authorize="hasAnyRole('EMPLOYEE','MANAGER', 'ADMIN')" action="#" th:action="@{/logout}" method="POST" class="d-flex">
 		  		<input type="submit" class="btn btn-danger" value="Logout"/>
 		  </form>
 				

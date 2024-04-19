@@ -7,43 +7,13 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </head>
-
+<div th:replace="~{navbar :: navbar}"></div>
 <body>
 
     <h2>Welcome to the Jupiter Company!</h2>
 	<h2>It is great to see you here!</h2>
     <hr>
-   <p>	Welcome to the home page</p>
-   <p>This page is open to the public. No login required.</p>
-	<p>Here are some Examples of code that will make more sense once you finish the course. Good Luck!</p>
-	<div class="container">
-   <div id="carouselExampleIndicators" class="carousel slide">
-     <div class="carousel-indicators">
-       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-     </div>
-
-     <div class="carousel-inner">
-       <div class="carousel-item active">
-         <img src="/images/eclipse1.png" class="d-block w-100" alt="...">
-       </div>
-       <div class="carousel-item">
-         <img src="/images/eclipse2.png" class="d-block w-100" alt="...">
-       </div>
-       <div class="carousel-item">
-         <img src="/images/eclipse3.png" class="d-block w-100" alt="...">
-       </div>
-     </div>
-     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-       <span class="visually-hidden">Previous</span>
-     </button>
-     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-       <span class="carousel-control-next-icon" aria-hidden="true"></span>
-       <span class="visually-hidden">Next</span>
-     </button>
-   </div>
+   <p>Employees must login before accessing any of our internal tools</p>
    </div>
 	<hr>
 	<a class="btn btn-primary ms-5" th:href="@{/employees}">Access Secure Site</a>
@@ -51,9 +21,3 @@
 
 </body>
 </html>
-
-<style>
-	body{
-		background-color: lightblue;
-	}
-</style>
