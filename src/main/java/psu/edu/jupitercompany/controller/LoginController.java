@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class LoginController {
 
-	@GetMapping("/")
+	@GetMapping("/employees")
 	public String showHome() {
 		return "home";
 	}
@@ -20,5 +20,9 @@ public class LoginController {
 	public String accessDenied() {
 		
 		return "access-denied";
+	}
+	@GetMapping("/")
+	public String showLanding() {
+		return "landing";
 	}
 }

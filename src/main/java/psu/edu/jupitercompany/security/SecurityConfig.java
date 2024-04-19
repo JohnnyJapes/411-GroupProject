@@ -41,6 +41,7 @@ public class SecurityConfig {
     	http.authorizeHttpRequests(configurer ->
     	configurer
 				.requestMatchers(HttpMethod.GET, "/images/*").permitAll()
+				.requestMatchers("/").permitAll()
     			  .requestMatchers("/employees/list/**").hasRole("EMPLOYEE")
     			  .requestMatchers("/employees/showFormForAdd/**").hasRole("MANAGER")
     			  .requestMatchers("/employees/showFormForUpdate/**").hasRole("MANAGER")
@@ -55,6 +56,7 @@ public class SecurityConfig {
     						.permitAll()
     			)
     			.logout(logout -> logout.permitAll()
+    					.logoutSuccessUrl("/")
     					)
     			.exceptionHandling(configurer -> 
     						configurer.accessDeniedPage("/access-denied")
